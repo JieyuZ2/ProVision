@@ -1,0 +1,14 @@
+[
+    {
+        "type": "relation",
+        "ann_file": "$DATA_DIR/relation/train_coco_relation_category_interaction_sam_seem_regions_150_verified_qwen_llava_rule.jsonl",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "add_description": true
+    },
+    {
+        "type": "relation_specialist",
+        "ann_file": "$DATA_DIR/relation/train_coco_relation_category_interaction_sam_seem_regions_150_verified_qwen_llava_rule_clean.jsonl",
+        "region_hdf5": "$DATA_DIR/relation/regions/train_coco_relation_category_interaction_sam_seem_regions_150_verified_qwen_llava_rule_clean.hdf5",
+        "img_prefix": "$IMAGE_DIR/gqa/images"
+    }
+]

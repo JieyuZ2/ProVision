@@ -1,0 +1,9 @@
+[
+    {
+        "type": "gqa_cot_sg_grounded",
+        "ann_file": "$DATA_DIR/gqa/train_cot_gqa_sam_seem_regions_grounded.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"],
+        "region_mode": "box_segmentation"
+    }
+]

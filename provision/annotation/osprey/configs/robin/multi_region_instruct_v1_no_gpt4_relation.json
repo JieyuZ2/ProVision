@@ -1,0 +1,122 @@
+[
+    {
+        "type": "refexp",
+        "ann_file": "$DATA_DIR/refcocos/finetune_refcoco_train_with_grounding_regions_30.json",
+        "use_bbox_text": true,
+        "img_prefix": "$IMAGE_DIR/"
+    },
+    {
+        "type": "refexp",
+        "ann_file": "$DATA_DIR/refcocos/finetune_refcocog_train_with_grounding_regions_30.json",
+        "use_bbox_text": true,
+        "img_prefix": "$IMAGE_DIR/"
+    },
+    {
+        "type": "refexp",
+        "ann_file": "$DATA_DIR/refcocos/finetune_refcoco+_train_with_grounding_regions_30.json",
+        "use_bbox_text": true,
+        "img_prefix": "$IMAGE_DIR/"
+    },
+    {
+        "type": "vcr",
+        "ann_file": "$DATA_DIR/vcr/train.jsonl",
+        "use_bbox_text": true,
+        "img_prefix": "$IMAGE_DIR/vcr/vcr1images",
+        "mc_only": true
+    },
+    {
+        "type": "sg_detection",
+        "ann_file": "$DATA_DIR/sg/psg_vg_train_sg_sam_hq_v4_full.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"],
+        "region_mode": "box",
+        "sg_mode": 2
+    },
+    {
+        "type": "sg",
+        "ann_file": "$DATA_DIR/sg/psg_vg_train_sg_sam_hq_v4_full.json",
+        "use_bbox_text": true,
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"]
+    },
+    {
+        "type": "gqa_cot_sg_grounded",
+        "ann_file": "$DATA_DIR/gqa/train_cot_gqa_sam_seem_regions_grounded.json",
+        "use_bbox_text": true,
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"]
+    },
+    {
+        "type": "llava",
+        "ann_file": "$DATA_DIR/llava/llava_v1_5_vqas_mix244k.json",
+        "img_prefix": "$IMAGE_DIR/"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$DATA_DIR/llava/llava_v1_5_aokvqas_66k.json",
+        "img_prefix": "$IMAGE_DIR/"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$DATA_DIR/llava/llava_v1_5_textcaps_22k.json",
+        "img_prefix": "$IMAGE_DIR/"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$IMAGE_DIR/../data/ScienceQA/science_qa_train_llava_format.json",
+        "img_prefix": "$IMAGE_DIR/../data/ScienceQA/images"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$IMAGE_DIR/../data/st_vqa/st_vqa_train_llava_format.json",
+        "img_prefix": "$IMAGE_DIR/../data/st_vqa/images"
+    },
+
+    {
+        "type": "llava",
+        "ann_file": "$PRIOR_DATA/LLaVA-NeXT-Data/ai2d/ai2d_train_llava_format.json",
+        "img_prefix": "$PRIOR_DATA/LLaVA-NeXT-Data/ai2d/images"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$PRIOR_DATA/LLaVA-NeXT-Data/chart_qa/chart_qa_train_llava_format.json",
+        "img_prefix": "$PRIOR_DATA/LLaVA-NeXT-Data/chart_qa/images"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$PRIOR_DATA/LLaVA-NeXT-Data/doc_vqa/doc_vqa_train_llava_format.json",
+        "img_prefix": "$PRIOR_DATA/LLaVA-NeXT-Data/doc_vqa/images"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$PRIOR_DATA/LLaVA-NeXT-Data/dvqa/dvqa_train_llava_format.json",
+        "img_prefix": "$PRIOR_DATA/LLaVA-NeXT-Data/dvqa/images"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$PRIOR_DATA/LLaVA-NeXT-Data/laion-gpt4v/laion-gpt4v_train_llava_format.json",
+        "img_prefix": "$PRIOR_DATA/LLaVA-NeXT-Data/laion-gpt4v/images"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$PRIOR_DATA/LLaVA-NeXT-Data/synth_doc_en/synth_doc_en_train_llava_format.json",
+        "img_prefix": "$PRIOR_DATA/LLaVA-NeXT-Data/synth_doc_en/images"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$PRIOR_DATA/cauldron/tqa/tqa_train_llava_format.json",
+        "img_prefix": "$PRIOR_DATA/cauldron/tqa/images"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$PRIOR_DATA/cauldron/tallyqa/tallyqa_train_llava_format.json",
+        "img_prefix": "$PRIOR_DATA/cauldron/tallyqa/images",
+        "sample": 0.5
+    },
+    {
+        "type": "VGDATA",
+        "ann_file": "$DATA_DIR/vg/vg_train_with_mask.json",
+        "use_bbox_text": true,
+        "img_prefix": "$IMAGE_DIR/vg/VG_100K_all"
+    }
+]

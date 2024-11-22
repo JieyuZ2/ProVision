@@ -1,0 +1,8 @@
+[
+    {
+        "type": "llava",
+        "ann_file": "$DATA_DIR/llava/llava_v1_5_aokvqas_66k.json",
+        "img_prefix": "$IMAGE_DIR/",
+        "sample": 0.6
+    }
+]

@@ -1,0 +1,8 @@
+[
+    {
+        "type": "psg",
+        "ann_file": "$IMAGE_DIR/../data/psg/psg_train_val.json",
+        "img_prefix": "$IMAGE_DIR/coco",
+        "seg_img_prefix": "$IMAGE_DIR/../data/coco/panoptic_annotations"
+    }
+]

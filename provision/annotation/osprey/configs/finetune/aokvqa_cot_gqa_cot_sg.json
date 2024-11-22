@@ -1,0 +1,14 @@
+[
+    {
+        "type": "aokvqa",
+        "ann_file": "$DATA_DIR/aokvqa/aokvqa_cogvlm_4bit_dense_gt_captions_grounding_objects_regions_scene_graph_gpt4_turbo_osprey_input.json",
+        "img_prefix": "$IMAGE_DIR/coco/train2017"
+    },
+
+    {
+        "type": "gqa_cot_sg",
+        "ann_file": "$DATA_DIR/gqa/train_cot_gqa_sam_hq.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"]
+    }
+]

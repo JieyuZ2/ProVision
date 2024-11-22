@@ -1,0 +1,16 @@
+[
+    {
+        "type": "sg",
+        "ann_file": "$DATA_DIR/sg/vg_train_sg_sam_hq_v3.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "sg_mode": 3
+    },
+    {
+        "type": "gqa_cot_sg",
+        "ann_file": "$DATA_DIR/gqa/train_cot_gqa_sam_hq.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"],
+        "use_relevant_relations": true,
+        "max_gt_per_img": 99
+    }
+]

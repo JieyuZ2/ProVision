@@ -1,0 +1,121 @@
+[
+    {
+        "type": "relation",
+        "ann_file": "$DATA_DIR/relation/train_coco_relation_category_interaction_sam_seem_regions_150_verified_qwen_llava_rule.jsonl",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "add_description": true
+    },
+    {
+        "type": "refexp",
+        "ann_file": "$DATA_DIR/refcocos/finetune_refcoco_train_with_grounding_regions_30.json",
+        "img_prefix": "$IMAGE_DIR/",
+        "captioning_ratio": 0.3
+    },
+    {
+        "type": "refexp",
+        "ann_file": "$DATA_DIR/refcocos/finetune_refcocog_train_with_grounding_regions_30.json",
+        "img_prefix": "$IMAGE_DIR/",
+        "captioning_ratio": 0.3
+    },
+    {
+        "type": "refexp",
+        "ann_file": "$DATA_DIR/refcocos/finetune_refcoco+_train_with_grounding_regions_30.json",
+        "img_prefix": "$IMAGE_DIR/",
+        "captioning_ratio": 0.3
+    },
+    {
+        "type": "vcr",
+        "ann_file": "$DATA_DIR/vcr/train.jsonl",
+        "img_prefix": "$IMAGE_DIR/vcr/vcr1images",
+        "mc_only": true
+    },
+    {
+        "type": "sg",
+        "ann_file": "$DATA_DIR/sg/psg_vg_train_sg_sam_hq_v3_full.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"]
+    },
+    {
+        "type": "gqa_cot_sg_grounded",
+        "ann_file": "$DATA_DIR/gqa/train_cot_gqa_sam_seem_regions_grounded.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"]
+    },
+    {
+        "type": "llava",
+        "ann_file": "$DATA_DIR/llava/llava_v1_5_vqas_mix244k.json",
+        "img_prefix": "$IMAGE_DIR/"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$DATA_DIR/llava/llava_v1_5_sharegpt_40k.json",
+        "img_prefix": "$IMAGE_DIR/"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$DATA_DIR/llava/llava_instruct_150k.json",
+        "img_prefix": "$IMAGE_DIR/coco/train2017/"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$DATA_DIR/llava/llava_v1_5_aokvqas_66k.json",
+        "img_prefix": "$IMAGE_DIR/"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$DATA_DIR/llava/llava_v1_5_textcaps_22k.json",
+        "img_prefix": "$IMAGE_DIR/"
+    },
+
+    {
+        "type": "point_qa_local",
+        "ann_file": "$DATA_DIR/shikra/pointQA_local_train.jsonl",
+        "img_prefix": "$IMAGE_DIR/vg/VG_100K_all"
+    },
+    {
+        "type": "point_qa_twice",
+        "ann_file": "$DATA_DIR/shikra/pointQA_twice_train.jsonl",
+        "img_prefix": "$IMAGE_DIR/vg/VG_100K_all"
+    },
+    {
+        "type": "v7w_point_qa",
+        "ann_file": "$DATA_DIR/shikra/v7w_pointing_train.jsonl",
+        "img_prefix": "$IMAGE_DIR/visual7w/images/"
+    },
+
+    {
+        "type": "OspreyShortForm",
+        "ann_file": "$DATA_DIR/Osprey-724K/osprey_short_form.json",
+        "img_prefix": "$IMAGE_DIR/coco/train2017"
+    },
+
+    {
+        "type": "OspreyLVISPosNeg",
+        "ann_file": "$DATA_DIR/Osprey-724K/osprey_lvis_positive_negative.json",
+        "img_prefix": "$IMAGE_DIR/coco/train2017"
+    },
+
+    {
+        "type": "OspreyConversations",
+        "ann_file": "$DATA_DIR/Osprey-724K/osprey_conversation.json",
+        "img_prefix": "$IMAGE_DIR/coco/train2017"
+    },
+
+    {
+        "type": "OspreyDetailedDescription",
+        "ann_file": "$DATA_DIR/Osprey-724K/osprey_detailed_description.json",
+        "img_prefix": "$IMAGE_DIR/coco/train2017"
+    },
+   
+    {
+        "type": "OspreyPartLevel",
+        "ann_file": "$DATA_DIR/Osprey-724K/osprey_part_level.json",
+        "img_prefix": "$IMAGE_DIR/coco/train2017"
+    },
+
+    {
+        "type": "VGDATA",
+        "ann_file": "$DATA_DIR/vg/vg_train_with_mask.json",
+        "img_prefix": "$IMAGE_DIR/vg/VG_100K_all"
+    }
+]

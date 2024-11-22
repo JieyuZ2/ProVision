@@ -1,0 +1,20 @@
+[
+    {
+        "type": "sg",
+        "ann_file": "$DATA_DIR/sg/vg_train_sg_sam_hq_v3.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"] 
+    },
+    {
+        "type": "psg",
+        "ann_file": "$IMAGE_DIR/../data/psg/psg_train_val.json",
+        "img_prefix": "$IMAGE_DIR/coco",
+        "seg_img_prefix": "$IMAGE_DIR/../data/coco/panoptic_annotations"
+    },
+    {
+        "type": "relation",
+        "ann_file": "$DATA_DIR/relation/train_coco_relation_category_interaction_sam_seem_regions_150_verified_8.jsonl",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "region_mode": "segmentation"
+    }
+]

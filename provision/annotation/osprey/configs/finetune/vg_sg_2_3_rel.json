@@ -1,0 +1,24 @@
+[
+    {
+        "type": "sg",
+        "ann_file": "$DATA_DIR/sg/vg_train_sg_sam_hq.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"], 
+        "sg_mode": 2
+    },
+    {
+        "type": "sg",
+        "ann_file": "$DATA_DIR/sg/vg_train_sg_sam_hq.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"], 
+        "sg_mode": 3
+    },
+    {
+        "type": "sg_relation",
+        "ann_file": "$DATA_DIR/sg/vg_train_sg_sam_hq.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"], 
+        "sg_mode": 3,
+        "shuffle_relations": true
+    }
+]

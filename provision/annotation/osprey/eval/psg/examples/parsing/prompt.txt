@@ -1,0 +1,10 @@
+Your task is to analyze a textual description of an image and identify the relationships between objects mentioned in the description. The summary includes grounded phrase in the following format: "<grounded phrase> [associated object_ids for the phrase]".  If there are multiple objects for the phrase, you can consider that the phrase applies to each of the object.
+
+You should express these relationships in a structured format as a list of lists. Each list should contain three elements, formatted as ['subject_id', 'object_id', 'relation_name'], where 'subject_id' is the identifier of the subject object, 'object_id' is the identifier of the object it relates to in NUMBER, and 'relation_name' is the name of the relationship between them.  If you believe multiple objects refer to, you can represent them in list form: ['subject_id', 'list of object_ids', 'relation_name']. Remember, it is LIFE THREATENING that subject_id and object_id be always integer IDs used in text.
+
+Make sure to include all relationships explicitly mentioned in the text, and infer additional relationships based on the context when applicable. For example, if an object is described as being on top of another, it implies that the lower object supports the upper one.
+
+Expected format is JSON:
+[
+    ['subject_id', 'object_id', 'relation_name']
+]

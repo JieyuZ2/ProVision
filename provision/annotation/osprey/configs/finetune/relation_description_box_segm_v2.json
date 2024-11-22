@@ -1,0 +1,14 @@
+[
+    {
+        "type": "relation",
+        "ann_file": "$DATA_DIR/relation/train_coco_relation_category_sam_seem_regions_150.jsonl",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "region_mode": "box_segmentation"
+    },
+    {
+        "type": "relation_description",
+        "ann_file": "$DATA_DIR/relation/train_coco_relation_category_sam_seem_regions_150.jsonl",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "region_mode": "box_segmentation"
+    }
+]

@@ -1,0 +1,59 @@
+[
+    {
+        "type": "relation",
+        "ann_file": "$DATA_DIR/relation/train_coco_relation_category_interaction_sam_seem_regions_150_verified_qwen_llava_rule.jsonl",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "add_description": true
+    },
+    {
+        "type": "refexp",
+        "ann_file": "$DATA_DIR/refcocos/finetune_refcoco_train_with_grounding_regions_30.json",
+        "img_prefix": "$IMAGE_DIR/",
+        "captioning_ratio": 0.3
+    },
+    {
+        "type": "refexp",
+        "ann_file": "$DATA_DIR/refcocos/finetune_refcocog_train_with_grounding_regions_30.json",
+        "img_prefix": "$IMAGE_DIR/",
+        "captioning_ratio": 0.3
+    },
+    {
+        "type": "refexp",
+        "ann_file": "$DATA_DIR/refcocos/finetune_refcoco+_train_with_grounding_regions_30.json",
+        "img_prefix": "$IMAGE_DIR/",
+        "captioning_ratio": 0.3
+    },
+    {
+        "type": "vcr",
+        "ann_file": "$DATA_DIR/vcr/train.jsonl",
+        "img_prefix": "$IMAGE_DIR/vcr/vcr1images",
+        "mc_only": true
+    },
+    {
+        "type": "sg",
+        "ann_file": "$DATA_DIR/sg/psg_vg_train_sg_sam_hq_v3_full.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"]
+    },
+    {
+        "type": "gqa_cot_sg_grounded",
+        "ann_file": "$DATA_DIR/gqa/train_cot_gqa_sam_seem_regions_grounded.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"]
+    },
+    {
+        "type": "llava",
+        "ann_file": "$DATA_DIR/llava/llava_v1_5_vqas_mix244k.json",
+        "img_prefix": "$IMAGE_DIR/"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$DATA_DIR/llava/llava_v1_5_aokvqas_66k.json",
+        "img_prefix": "$IMAGE_DIR/"
+    },
+    {
+        "type": "llava",
+        "ann_file": "$DATA_DIR/llava/llava_v1_5_textcaps_22k.json",
+        "img_prefix": "$IMAGE_DIR/"
+    }
+]

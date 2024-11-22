@@ -1,0 +1,16 @@
+[
+    {
+        "type": "sg",
+        "ann_file": "$DATA_DIR/sg/psg_vg_train_sg_sam_hq_v3_full.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "region_mode": "segmentation",
+        "ignored_relations": ["to the left of", "to the right of"]
+    },
+    {
+        "type": "relation",
+        "ann_file": "$DATA_DIR/relation/train_coco_relation_category_interaction_sam_seem_regions_150_verified_17.jsonl",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "region_mode": "segmentation",
+        "add_description": true
+    }
+]

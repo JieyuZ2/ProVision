@@ -1,0 +1,43 @@
+[
+    {
+        "type": "OspreyShortForm",
+        "ann_file": "$DATA_DIR/Osprey-724K/osprey_short_form.json",
+        "img_prefix": "$IMAGE_DIR/coco/train2017"
+    },
+
+    {
+        "type": "OspreyLVISPosNeg",
+        "ann_file": "$DATA_DIR/Osprey-724K/osprey_lvis_positive_negative.json",
+        "img_prefix": "$IMAGE_DIR/coco/train2017"
+    },
+
+    {
+        "type": "OspreyConversations",
+        "ann_file": "$DATA_DIR/Osprey-724K/osprey_conversation.json",
+        "img_prefix": "$IMAGE_DIR/coco/train2017"
+    },
+
+    {
+        "type": "OspreyDetailedDescription",
+        "ann_file": "$DATA_DIR/Osprey-724K/osprey_detailed_description.json",
+        "img_prefix": "$IMAGE_DIR/coco/train2017"
+    },
+   
+    {
+        "type": "OspreyPartLevel",
+        "ann_file": "$DATA_DIR/Osprey-724K/osprey_part_level.json",
+        "img_prefix": "$IMAGE_DIR/coco/train2017"
+    },
+
+    {
+        "type": "VGDATA",
+        "ann_file": "$DATA_DIR/vg/vg_train_with_mask.json",
+        "img_prefix": "$IMAGE_DIR/vg/VG_100K_all"
+    },
+    
+    {
+        "type": "vcr",
+        "ann_file": "$DATA_DIR/vcr/train.jsonl",
+        "img_prefix": "$IMAGE_DIR/vcr/vcr1images"
+    }
+]

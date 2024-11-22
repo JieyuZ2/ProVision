@@ -1,0 +1,9 @@
+[
+    {
+        "type": "relation",
+        "ann_file": "$DATA_DIR/relation/train_coco_relation_category_interaction_sam_seem_regions_150_verified_8.jsonl",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "region_mode": "segmentation",
+        "add_description": true
+    }
+]

@@ -1,0 +1,8 @@
+[
+    {
+        "type": "gqa_cot_sg",
+        "ann_file": "/net/nfs.cirrascale/prior/jamesp/Osprey/data/gqa/train_cot_gqa_sam_hq.json",
+        "img_prefix": "/net/nfs.cirrascale/prior/jamesp/data/gqa/images/",
+        "ignored_relations": ["to the left of", "to the right of"]
+    }
+]

@@ -1,0 +1,7 @@
+[
+    {
+        "type": "relation",
+        "ann_file": "$DATA_DIR/relation/train_coco_relation_sam_seem_regions_150_subset.jsonl",
+        "img_prefix": "$IMAGE_DIR/gqa/images"
+    }
+]

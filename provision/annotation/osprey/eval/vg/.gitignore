@@ -1,0 +1,5 @@
+*.pytorch
+*.yml
+*.zip
+maskrcnn_benchmark
+datasets

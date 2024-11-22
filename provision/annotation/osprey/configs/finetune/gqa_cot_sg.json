@@ -1,0 +1,8 @@
+[
+    {
+        "type": "gqa_cot_sg",
+        "ann_file": "$DATA_DIR/gqa/train_cot_gqa_sam_hq.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"]
+    }
+]

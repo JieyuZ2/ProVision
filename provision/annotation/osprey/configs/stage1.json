@@ -1,0 +1,7 @@
+[
+    {
+        "type": "llava",
+        "ann_file": "$IMAGE_DIR/llava/LLaVA-Pretrain/blip_laion_cc_sbu_558k.json",
+        "img_prefix": "$IMAGE_DIR/llava/LLaVA-Pretrain/images/"
+    }
+]

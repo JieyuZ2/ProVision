@@ -1,0 +1,37 @@
+[
+    
+   {
+      "type": "coco_data",
+      "ann_file": "$DATA_DIR/coco/annotations/instances_train2017.json",
+      "use_bbox_text": true,
+      "img_prefix": "$IMAGE_DIR/coco/train2017"
+   },
+
+    {
+        "type": "RefCOCO",
+        "ann_file": "$DATA_DIR/refcocos/finetune_refcoco_train_with_mask.json",
+        "use_bbox_text": true,
+        "img_prefix": "$IMAGE_DIR/coco/train2017"
+     },
+
+    {
+        "type": "RefCOCOP",
+        "ann_file": "$DATA_DIR/refcocos/finetune_refcoco+_train_with_mask.json",
+        "use_bbox_text": true,
+        "img_prefix": "$IMAGE_DIR/coco/train2017"
+     },
+
+    {
+        "type": "PascalPart",
+        "ann_file": "$DATA_DIR/part_data/pascal_part/pascalpart_train.json",
+        "use_bbox_text": true,
+        "img_prefix": "$DATA_DIR/part_data/pascal_part/VOCdevkit/VOC2010/JPEGImages"
+     },
+     
+     {
+        "type": "PartImagenet",
+        "ann_file": "$DATA_DIR/part_data/partImagenet/partImagenet_train_format.json",
+        "use_bbox_text": true,
+        "img_prefix": "$DATA_DIR/part_data/partImagenet/train/"
+     }
+]

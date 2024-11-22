@@ -1,0 +1,10 @@
+[
+    {
+        "type": "sg_detection",
+        "ann_file": "$DATA_DIR/sg/psg_vg_train_sg_sam_hq_v4_full.json",
+        "img_prefix": "$IMAGE_DIR/gqa/images",
+        "ignored_relations": ["to the left of", "to the right of"],
+        "region_mode": "box",
+        "sg_mode": 0
+    }
+]
