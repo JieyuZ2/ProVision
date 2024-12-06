@@ -22,11 +22,12 @@ One can also extend the engine by adding new data generators.
 
 ## Usage
 
-Please find the demo notebook in the `notebook` folder.
+For augmented scene graph generation, please follow the instruction in [SCENE_GRAPH_GENERATION.md](SCENE_GRAPH_GENERATION.md).
+
+For instruction generation, please refer to the demo notebook in the `notebook` folder.
 It contains step-by-step guide on 
-1. how to generate scene graphs for images using ProVision's scene graph generation pipeline
-2. how to generate single-image instruction data for images using ProVision's data generation engine
-3. how to generate multi-image instruction data for images using ProVision's data generation engine
+1. how to generate single-image instruction data for images using ProVision's data generation engine
+2. how to generate multi-image instruction data for images using ProVision's data generation engine
 
 For a detailed instruction of the scene graph generation pipeline, refer to `annotate.md`.
 

@@ -180,7 +180,7 @@ res = annotator.attribute_detection(
     obj_det_path: str = "/path/to/object-detection-annotations.json",
     # optional arguments:
     # model_base: str = None,
-    # model_path: str = "jieyuz2/llava7b-attr5", # or "jieyuz2/llava-v1.5-13b-attr5" for llava-v1.5-13b
+    # model_path: str = "jieyuz2/llava-v1.5-7b-attribute", # or "jieyuz2/llava-v1.5-13b-attribute" for llava-v1.5-13b
     # if_load_8bit: bool = False,
     # if_load_4bit: bool = False,
     # inp = "<image>\n{label}",
