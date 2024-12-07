@@ -1,0 +1,51 @@
+{
+    "baseball_1": {
+        "data_path": "sample_data/images/baseball_1.png",
+        "annotation": {
+            "width": 401,
+            "height": 400,
+            "attributes": [
+                [
+                    "swinging"
+                ],
+                [
+                    "blue",
+                    "yellow"
+                ],
+                [
+                    "white"
+                ],
+                [
+                    "blue",
+                    "white"
+                ]
+            ]
+        },
+        "source": null
+    },
+    "baseball_2": {
+        "data_path": "sample_data/images/baseball_2.png",
+        "annotation": {
+            "width": 401,
+            "height": 400,
+            "attributes": [
+                [
+                    "swinging"
+                ],
+                [
+                    "blue",
+                    "white",
+                    "yellow"
+                ],
+                [
+                    "white"
+                ],
+                [
+                    "blue",
+                    "white"
+                ]
+            ]
+        },
+        "source": null
+    }
+}

@@ -1,0 +1,94 @@
+{
+    "baseball_1": {
+        "data_path": "sample_data/images/baseball_1.png",
+        "annotation": {
+            "width": 401,
+            "height": 400,
+            "det_scores": [
+                0.649032711982727,
+                0.4880415201187134,
+                0.4866553246974945,
+                0.06022649258375168
+            ],
+            "labels": [
+                "batter",
+                "bat",
+                "ball",
+                "baseball uniform"
+            ],
+            "bboxes": [
+                [
+                    5,
+                    54,
+                    266,
+                    355
+                ],
+                [
+                    203,
+                    121,
+                    348,
+                    212
+                ],
+                [
+                    366,
+                    176,
+                    389,
+                    198
+                ],
+                [
+                    48,
+                    55,
+                    155,
+                    180
+                ]
+            ]
+        },
+        "source": null
+    },
+    "baseball_2": {
+        "data_path": "sample_data/images/baseball_2.png",
+        "annotation": {
+            "width": 401,
+            "height": 400,
+            "det_scores": [
+                0.649032711982727,
+                0.4880415201187134,
+                0.4866553246974945,
+                0.06022649258375168
+            ],
+            "labels": [
+                "batter",
+                "bat",
+                "ball",
+                "baseball uniform"
+            ],
+            "bboxes": [
+                [
+                    5,
+                    54,
+                    266,
+                    355
+                ],
+                [
+                    203,
+                    121,
+                    348,
+                    212
+                ],
+                [
+                    366,
+                    176,
+                    389,
+                    198
+                ],
+                [
+                    48,
+                    55,
+                    155,
+                    180
+                ]
+            ]
+        },
+        "source": null
+    }
+}

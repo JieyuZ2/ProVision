@@ -1,0 +1,84 @@
+{
+    "baseball_1": {
+        "data_path": "sample_data/images/baseball_1.png",
+        "annotation": {
+            "width": 401,
+            "height": 400,
+            "seg_mask_id": "baseball_1_mask.pkl",
+            "bboxes": [
+                [
+                    5,
+                    54,
+                    266,
+                    355
+                ],
+                [
+                    203,
+                    121,
+                    348,
+                    212
+                ],
+                [
+                    366,
+                    176,
+                    389,
+                    198
+                ],
+                [
+                    48,
+                    55,
+                    155,
+                    180
+                ]
+            ],
+            "labels": [
+                "batter",
+                "bat",
+                "ball",
+                "baseball uniform"
+            ]
+        },
+        "source": null
+    },
+    "baseball_2": {
+        "data_path": "sample_data/images/baseball_2.png",
+        "annotation": {
+            "width": 401,
+            "height": 400,
+            "seg_mask_id": "baseball_2_mask.pkl",
+            "bboxes": [
+                [
+                    5,
+                    54,
+                    266,
+                    355
+                ],
+                [
+                    203,
+                    121,
+                    348,
+                    212
+                ],
+                [
+                    366,
+                    176,
+                    389,
+                    198
+                ],
+                [
+                    48,
+                    55,
+                    155,
+                    180
+                ]
+            ],
+            "labels": [
+                "batter",
+                "bat",
+                "ball",
+                "baseball uniform"
+            ]
+        },
+        "source": null
+    }
+}

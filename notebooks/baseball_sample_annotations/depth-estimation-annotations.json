@@ -1,0 +1,20 @@
+{
+    "baseball_1": {
+        "data_path": "sample_data/images/baseball_1.png",
+        "annotation": {
+            "width": 401,
+            "height": 400,
+            "depth_mask_id": "baseball_1_depth.npy"
+        },
+        "source": null
+    },
+    "baseball_2": {
+        "data_path": "sample_data/images/baseball_2.png",
+        "annotation": {
+            "width": 401,
+            "height": 400,
+            "depth_mask_id": "baseball_2_depth.npy"
+        },
+        "source": null
+    }
+}
