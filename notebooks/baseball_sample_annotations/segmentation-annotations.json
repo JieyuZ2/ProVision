@@ -43,40 +43,68 @@
     "baseball_2": {
         "data_path": "sample_data/images/baseball_2.png",
         "annotation": {
-            "width": 401,
-            "height": 400,
+            "width": 770,
+            "height": 506,
             "seg_mask_id": "baseball_2_mask.pkl",
             "bboxes": [
                 [
-                    5,
-                    54,
-                    266,
-                    355
+                    558,
+                    185,
+                    770,
+                    491
                 ],
                 [
-                    203,
-                    121,
-                    348,
-                    212
-                ],
-                [
-                    366,
-                    176,
-                    389,
-                    198
-                ],
-                [
-                    48,
+                    244,
                     55,
-                    155,
-                    180
+                    460,
+                    494
+                ],
+                [
+                    338,
+                    17,
+                    434,
+                    214
+                ],
+                [
+                    145,
+                    14,
+                    720,
+                    490
+                ],
+                [
+                    606,
+                    380,
+                    679,
+                    428
+                ],
+                [
+                    603,
+                    447,
+                    631,
+                    484
+                ],
+                [
+                    558,
+                    358,
+                    769,
+                    490
+                ],
+                [
+                    559,
+                    366,
+                    611,
+                    427
                 ]
             ],
             "labels": [
+                "catcher",
                 "batter",
                 "bat",
+                "game",
+                "baseball glove",
                 "ball",
-                "baseball uniform"
+                "catcher",
+                "ball"
             ]
         },
         "source": null

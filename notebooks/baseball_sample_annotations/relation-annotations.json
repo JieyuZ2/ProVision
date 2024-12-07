@@ -4,16 +4,16 @@
         "annotation": {
             "width": 401,
             "height": 400,
-            "raw_relations": "Objects:\nregion1: person\nregion2: baseball bat\nregion3: sports ball\nregion4: person\n\nRelations:\nregion1: region2 holding, region3 about to hit\nregion4: region1 beside"
+            "raw_relations": "Objects:\nregion1: person\nregion2: baseball bat\nregion3: sports ball\nregion4: baseball uniform\n\nRelations:\nregion1: region2 holding, region3 about to hit, region4 wearing"
         },
         "source": null
     },
     "baseball_2": {
         "data_path": "sample_data/images/baseball_2.png",
         "annotation": {
-            "width": 401,
-            "height": 400,
-            "raw_relations": "Objects:\nregion1: person\nregion2: baseball bat\nregion3: sports ball\nregion4: baseball uniform\n\nRelations:\nregion1: region2 holding, region3 about to hit, region4 wearing"
+            "width": 770,
+            "height": 506,
+            "raw_relations": "Objects:\nregion1: catcher\nregion2: batter\nregion3: bat\nregion4: game\nregion5: glove\nregion6: ball\nregion7: catcher\nregion8: glove\n\nRelations:\nregion1: region6 catching\nregion2: region3 swinging\nregion5: region7 on\nregion8: region1 on"
         },
         "source": null
     }

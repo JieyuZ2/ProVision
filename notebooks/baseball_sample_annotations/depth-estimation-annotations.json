@@ -11,8 +11,8 @@
     "baseball_2": {
         "data_path": "sample_data/images/baseball_2.png",
         "annotation": {
-            "width": 401,
-            "height": 400,
+            "width": 770,
+            "height": 506,
             "depth_mask_id": "baseball_2_depth.npy"
         },
         "source": null

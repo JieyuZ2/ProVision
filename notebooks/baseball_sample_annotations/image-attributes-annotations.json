@@ -10,7 +10,8 @@
                 ],
                 [
                     "blue",
-                    "yellow"
+                    "golden",
+                    "white"
                 ],
                 [
                     "white"
@@ -26,22 +27,38 @@
     "baseball_2": {
         "data_path": "sample_data/images/baseball_2.png",
         "annotation": {
-            "width": 401,
-            "height": 400,
+            "width": 770,
+            "height": 506,
             "attributes": [
+                [
+                    "crouching",
+                    "kneeling",
+                    "squatting"
+                ],
                 [
                     "swinging"
                 ],
                 [
-                    "blue",
-                    "white",
-                    "yellow"
+                    "brown",
+                    "wooden"
+                ],
+                [
+                    "professional"
+                ],
+                [
+                    "red",
+                    "white"
                 ],
                 [
                     "white"
                 ],
                 [
-                    "blue",
+                    "crouching",
+                    "kneeling",
+                    "red",
+                    "white"
+                ],
+                [
                     "white"
                 ]
             ]
