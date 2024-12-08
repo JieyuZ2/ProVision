@@ -567,7 +567,7 @@ class JointDataset(BaseDataset):
 		cnt2ids = defaultdict(list)
 		for i, c in zip(ids, cnt):
 			cnt2ids[c].append(i)
-		if len(cnt2ids) > n:
+		if len(cnt2ids) >= n:
 			selected = list(rng.choice(list(cnt2ids.keys()), n, replace=False))
 			return obj, [(rng.choice(cnt2ids[cnt]), cnt) for cnt in selected]
 		else:

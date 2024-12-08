@@ -32,7 +32,7 @@
                 ]
             ],
             "labels": [
-                "batter",
+                "human",
                 "bat",
                 "ball",
                 "baseball uniform"
@@ -97,13 +97,13 @@
                 ]
             ],
             "labels": [
-                "catcher",
-                "batter",
+                "human",
+                "human",
                 "bat",
                 "game",
                 "baseball glove",
                 "ball",
-                "catcher",
+                "human",
                 "ball"
             ]
         },

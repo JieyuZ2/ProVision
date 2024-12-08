@@ -11,7 +11,7 @@
                 0.060238905251026154
             ],
             "labels": [
-                "batter",
+                "human",
                 "bat",
                 "ball",
                 "baseball uniform"
@@ -61,13 +61,13 @@
                 0.05061973258852959
             ],
             "labels": [
-                "catcher",
-                "batter",
+                "human",
+                "human",
                 "bat",
                 "game",
                 "baseball glove",
                 "ball",
-                "catcher",
+                "human",
                 "ball"
             ],
             "bboxes": [
