@@ -1,6 +1,7 @@
 # 1 is suitable for how many task, otherwise 0
 
 OBJECT_FOR_COUNTING_TASK = {
+    "human"                      : 0,
 	"people"                     : 0,
 	"students"                   : 0,
 	"geese"                      : 0,

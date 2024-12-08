@@ -6,19 +6,19 @@
             "height": 400,
             "relations": [
                 [
-                    3,
+                    0,
                     "wearing",
-                    0
+                    3
                 ],
                 [
-                    2,
+                    0,
                     "about to hit",
-                    0
+                    2
                 ],
                 [
-                    1,
+                    0,
                     "holding",
-                    0
+                    1
                 ]
             ]
         },
@@ -31,24 +31,24 @@
             "height": 506,
             "relations": [
                 [
-                    5,
+                    0,
                     "catching",
+                    5
+                ],
+                [
+                    4,
+                    "wearing",
+                    6
+                ],
+                [
+                    7,
+                    "on",
                     0
                 ],
                 [
-                    6,
-                    "wearing",
-                    4
-                ],
-                [
-                    0,
-                    "on",
-                    7
-                ],
-                [
-                    2,
+                    1,
                     "swinging",
-                    1
+                    2
                 ]
             ]
         },

@@ -6,12 +6,14 @@
             "height": 400,
             "attributes": [
                 [
-                    "swinging"
+                    "swinging",
+                    "white"
                 ],
                 [
                     "blue",
                     "golden",
-                    "white"
+                    "white",
+                    "wooden"
                 ],
                 [
                     "white"
@@ -36,7 +38,8 @@
                     "squatting"
                 ],
                 [
-                    "swinging"
+                    "swinging",
+                    "white"
                 ],
                 [
                     "brown",

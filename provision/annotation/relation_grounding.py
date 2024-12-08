@@ -72,7 +72,7 @@ def cate_grounding(output_list: list,
 
 			cur = 0
 			for b, o in bp:
-				new_relation_list = [(o[i][0], cate_list[idx], o[i][2])
+				new_relation_list = [(o[i][2], cate_list[idx], o[i][0])
 									 for i, idx_list in enumerate(selected_cate_idx[cur:b]) for idx in idx_list]
 				res.append(new_relation_list)
 				cur = b
@@ -86,7 +86,7 @@ def cate_grounding(output_list: list,
 
 		cur = 0
 		for b, o in bp:
-			new_relation_list = [(o[i][0], cate_list[idx], o[i][2])
+			new_relation_list = [(o[i][2], cate_list[idx], o[i][0])
 								 for i, idx_list in enumerate(selected_cate_idx[cur:b]) for idx in idx_list]
 			res.append(new_relation_list)
 			cur = b
