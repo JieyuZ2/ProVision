@@ -31,7 +31,7 @@ It contains step-by-step guide on
 
 ## ProVision-10M dataset
 
-
+We release ProVision-10M dataset, a 10M synthesized instruction data at this [link](huggingface.co/Salesforce/ProVision-10M)
 
 ## Disclaimers
 **ProVision** and its associated resources are provided for research and educational purposes only. 
