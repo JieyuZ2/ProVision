@@ -29,11 +29,9 @@ It contains step-by-step guide on
 1. how to generate single-image instruction data for images using ProVision's data generation engine
 2. how to generate multi-image instruction data for images using ProVision's data generation engine
 
-For a detailed instruction of the scene graph generation pipeline, refer to `annotate.md`.
-
 ## ProVision-10M dataset
 
-
+We release ProVision-10M dataset, a 10M synthesized instruction data at this [link](huggingface.co/Salesforce/ProVision-10M)
 
 ## Disclaimers
 **ProVision** and its associated resources are provided for research and educational purposes only. 
