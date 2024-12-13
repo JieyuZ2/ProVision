@@ -211,7 +211,15 @@ Return format:
 
 
 ## Relation
-We use [Osprey](https://github.com/CircleRadon/Osprey) for relation detection. You need to download the CLIP model and specify the `clip_path` when calling `relation_detection`.
+We use [Osprey](https://github.com/CircleRadon/Osprey) for relation detection. You need to download the CLIP model and specify the `clip_path` when calling `relation_detection`. Running relation detection required image segmentation results.
+
+We have two options for relation detections: `holistic` and `detailed`.
+- holistic: model will perform one-time inference and output all possible relations. Fast but may lose some accuracy.
+- detailed: model will inference througth all possible object pairs in the image. It takes longer time to complete but each object will have at at least one relation with other objects.
+
+We provide two types of APIs for relation detection. You can read the previous image segmentation results and call `annotator.relation_detection`, or perform image segmentation and relation detection simuteniously on the fly by calling `annotator.relation_wo_segment`.
+
+You can choose either using the original output from model or ground the model's output into your predefined relation list.
 
 ### Requirements
 1. Follow the [instruction](https://github.com/CircleRadon/Osprey?tab=readme-ov-file#install-%EF%B8%8F) and install the necessary packages.
@@ -222,8 +230,7 @@ We use [Osprey](https://github.com/CircleRadon/Osprey) for relation detection. Y
 3. Download our osprey and clip model by this [link](https://huggingface.co/datasets/jieyuz2/relation-model/resolve/main/relation_model.zip), uncompress to a specific path.
 This will include the osprey model weight and the CLIP weight called `open_clip_pytorch_model.bin`.
 
-### Usage
-Running relation generation/detection require segmentation annotation.
+### Usage of relation detection with predefined segmentation
 ```python
 import json
 from provision.annotator import Annotator
@@ -231,19 +238,48 @@ from provision.annotator import Annotator
 
 # image_list = [list of image_path]
 annotator = Annotator(device="cuda:0", image_list=image_list)
-res = annotator.image_segmentation(
-    osprey_model_path = "/path/to/osprey_model",
-    clip_model_path = "/path/to/open_clip_pytorch_model.bin",
-    seg_annotation_path = "path/to/segmentation-annotations.json",
-    seg_dir_path = "path/to/segmentations_npy_location",
-    # Optional arguments for if you want to ground the generated relations into your relation categories. We use a sentence transformer model to complete the grounding.
-    # ground_pred = False   # If true, we will run the grounding process to ground the generated relation into a user defined relation list.
-    # category_list_path = "/path/to/user_defined_relation_categories",  # the categories should be in the following format: {"level_1_category": [list of level_2 categories], ...}
+rel_res = annotator.relation_detection(
+    osprey_model_path='/path/to/osprey_model',
+    clip_model_path='/path/to/clip_model',
+    seg_annotation_path=f"{save_dir}/segmentation-annotations.json",
+    seg_dir_path=f"{save_dir}/seg_masks"
+    detection_mode = "holistic"  # or detailed
 )
-json.dump(res, open(f"{save_dir}/image-relations-annotations.json", "w"), indent=4)
+json.dump(rel_res, open(f"{save_dir}/relation-annotations.json", 'w'), indent=4)
+
+grounded_res = annotator.relation_parsing(
+    relation_annotation_path=f"{save_dir}/relation-annotations.json",
+    category_list_path="/path/to/relations.json", # You can leave this as "" or None if you want to use the model's original output as the relation. We also provided a pre-defined relations.json.
+    category_grounding=True # option of grounding your relation to your predefined relation list
+)
+json.dump(grounded_res, open(f"{save_dir}/relation-annotations-parsed.json", 'w'), indent=4)
 ```
 
-Return format:
+### Usage of relation detection with on the fly segmentation
+```python
+import json
+from provision.annotator import Annotator
+
+
+# image_list = [list of image_path]
+annotator = Annotator(device="cuda:0", image_list=image_list)
+rel_res = annotator.relation_wo_segment(
+    osprey_model_path='/path/to/osprey_model',
+    clip_model_path='/path/to/clip_model',
+    obj_det_path=f"{save_dir}/object-detection-annotations.json",
+    detection_mode="holistic"
+)
+json.dump(rel_res, open(f"{save_dir}/relation-annotations.json", 'w'), indent=4)
+
+grounded_res = annotator.relation_parsing(
+    relation_annotation_path=f"{save_dir}/relation-annotations.json",
+    category_list_path="/path/to/relations.json", # You can leave this as "" or None if you want to use the model's original output as the relation. We also provided a pre-defined relations.json.
+    category_grounding=True # option of grounding your relation to your predefined relation list
+)
+json.dump(grounded_res, open(f"{save_dir}/relation-annotations-parsed.json", 'w'), indent=4)
+```
+
+Return format (for parsed relation):
 ```json
 {
     "IMAGE_ID": {
@@ -275,7 +311,7 @@ joint_dataset = JointDataset(
      f"{save_dir}/segmentation-annotations.json", 
      f"{save_dir}/depth-estimation-annotations.json",
      f"{save_dir}/image-attributes-annotations.json", 
-     f"{save_dir}/image-relations-annotations.json"],
+     f"{save_dir}/relations-annotations-parsed.json"],
     seg_dir_path=f"{save_dir}/seg_masks",
     depth_dir_path=f"{save_dir}/depth_masks"
 )
