@@ -225,10 +225,9 @@ class Osprey:
 						   seg_dir_path: str,
 						   cache_file: str = None,
 						   ):  # holistic or detailed
-		res = []
 		seg_annotation = json.load(open(seg_annotation_path, 'r'))
 
-		if os.path.exists(cache_file):
+		if cache_file is not None and os.path.exists(cache_file):
 			cache = json.load(open(cache_file, 'r'))
 		else:
 			cache = {}
@@ -244,57 +243,62 @@ class Osprey:
 					if img_id not in cache:
 						img_ids.append(img_id)
 						pil_image_list.append(Image.open(image_path).convert('RGB'))
-
-				if len(pil_image_list) == 0:
-					continue
-				processed_image_list = self.process_image(pil_image_list)  # (batch_size, 3, 512, 512)
-
-				for img, img_id in zip(processed_image_list, img_ids):
-					annotation = seg_annotation[img_id]['annotation']  # [n_bboxes, w, h]
-					bbox_labels = annotation['labels']
-					mask_path = os.path.join(seg_dir_path, annotation['seg_mask_id'])
-					if ".pkl" in mask_path:
-						compressed_mask = pkl.load(open(os.path.join(seg_dir_path, annotation['seg_mask_id']), 'rb'))
-						raw_masks = np.array([c_masks.toarray() for c_masks in compressed_mask], dtype=bool)
 					else:
-						raw_masks = np.load(os.path.join(seg_dir_path, annotation['seg_mask_id']))
+						pbar.update()
 
-					img = img.unsqueeze(0).to(self.device)
-					masks = torch.from_numpy(np.array(raw_masks)).to(self.device)
-					img_relations = []
+				if len(pil_image_list) > 0:
 
-					try:
-						if self.detection_mode == "holistic":
-							input_ids = self.init_prompt(num_of_seg_per_instance=len(raw_masks), bbox_labels=bbox_labels)
-							outputs = self.generate_relation(input_ids, masks, img)
-							img_relations = outputs
+					processed_image_list = self.process_image(pil_image_list)  # (batch_size, 3, 512, 512)
 
-						elif self.detection_mode == "detailed":
-							for idx in range(len(raw_masks)):
-								input_ids = self.init_prompt(num_of_seg_per_instance=len(raw_masks), obj_idx=idx, bbox_labels=bbox_labels)
-								outputs = self.generate_relation(input_ids, masks, img)
-								img_relations.append(outputs)
-
+					for img, img_id in zip(processed_image_list, img_ids):
+						annotation = seg_annotation[img_id]['annotation']  # [n_bboxes, w, h]
+						bbox_labels = annotation['labels']
+						mask_path = os.path.join(seg_dir_path, annotation['seg_mask_id'])
+						if ".pkl" in mask_path:
+							compressed_mask = pkl.load(open(os.path.join(seg_dir_path, annotation['seg_mask_id']), 'rb'))
+							raw_masks = np.array([c_masks.toarray() for c_masks in compressed_mask], dtype=bool)
 						else:
-							raise f"Invalid detection mode {self.detection_mode}"
+							raw_masks = np.load(os.path.join(seg_dir_path, annotation['seg_mask_id']))
 
-					except Exception as e:
-						print(f"Error in image {img_id}")
-						raise e
+						img = img.unsqueeze(0).to(self.device)
+						masks = torch.from_numpy(np.array(raw_masks)).to(self.device)
+						img_relations = []
 
+						try:
+							if self.detection_mode == "holistic":
+								input_ids = self.init_prompt(num_of_seg_per_instance=len(raw_masks), bbox_labels=bbox_labels)
+								outputs = self.generate_relation(input_ids, masks, img)
+								img_relations = outputs
 
-					res.append(img_relations)
-					cache[img_id] = img_relations
-					if (len(cache) + 1) % 100 == 0:
-						print(f"Save cache to {cache_file}: {len(cache)}")
-						json.dump(cache, open(cache_file, 'w'), indent=2)
+							elif self.detection_mode == "detailed":
+								for idx in range(len(raw_masks)):
+									input_ids = self.init_prompt(num_of_seg_per_instance=len(raw_masks), obj_idx=idx, bbox_labels=bbox_labels)
+									outputs = self.generate_relation(input_ids, masks, img)
+									img_relations.append(outputs)
 
-					pbar.update()
+							else:
+								raise f"Invalid detection mode {self.detection_mode}"
+
+						except Exception as e:
+							print(f"Error in image {img_id}")
+							raise e
+
+						cache[img_id] = img_relations
+						if cache_file is not None and (len(cache) + 1) % 100 == 0:
+							print(f"Save cache to {cache_file}: {len(cache)}")
+							json.dump(cache, open(cache_file, 'w'), indent=2)
+
+						pbar.update()
 
 				pointer += bs
 				if pointer >= len(image_list):
 					break
 
-		return [{
-			"raw_relations": r,
-		} for r in res]
+		res = []
+		for image_path in image_list:
+			img_id = image_path.split('/')[-1].split('.')[0]
+			res.append({
+				"raw_relations": cache[img_id],
+			})
+
+		return res
