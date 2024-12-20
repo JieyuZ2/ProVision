@@ -49,6 +49,11 @@ The project is not liable for any damages or losses resulting from the use of th
 **BibTeX:**
 
 ```bibtex
-
+@article{zhang2024provision,
+  title={ProVision: Programmatically Scaling Vision-centric Instruction Data for Multimodal Language Models},
+  author={Zhang, Jieyu and Xue, Le and Song, Linxin and Wang, Jun and Huang, Weikai and Shu, Manli and Yan, An and Ma, Zixian and Niebles, Juan Carlos and Xiong, Caiming and others},
+  journal={arXiv preprint arXiv:2412.07012},
+  year={2024}
+}
 ```
 
