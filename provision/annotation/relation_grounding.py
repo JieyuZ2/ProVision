@@ -21,22 +21,22 @@ def rel_parsing(
 		for output in outputs_list:
 			try:
 				region_numbers = re.findall(r'region(\d+)', output)
-				target_idx = int(region_numbers[0])
-				source_idx = list(map(int, region_numbers[1:]))
+				source_idx = int(region_numbers[0])
+				target_idx = list(map(int, region_numbers[1:]))
 				relations = re.sub(r'region(\d+)', '', output).strip().split(':')[-1].strip().split(',')
 
 				# the "idx" is in the order of bboxes and labels
-				for idx_rel in zip(source_idx, relations):
-					img_relations.append((idx_rel[0]-1, idx_rel[1].strip(), target_idx-1))  # Y, relation, X
+				for idx_rel in zip(target_idx, relations):
+					img_relations.append((source_idx, idx_rel[1].strip(), idx_rel[0] - 1))  # X, relation, Y
 			except:
 				continue
 
 	elif detection_mode == 'detailed':
 		for idx, rel_output in enumerate(rel_output):
 			rel_list = rel_output.split(', ')
-			img_relations += [(int(re.findall(r'region(\d+)', rel)[0]) - 1,
+			img_relations += [(idx,
 							   re.sub(r'region(\d+)', '', rel).strip(),
-							   idx) for rel in rel_list]  # (id, relation, current_idx)
+							   int(re.findall(r'region(\d+)', rel)[0]) - 1) for rel in rel_list]
 
 	else:
 		raise f"Invalid detection mode {detection_mode}"
@@ -72,7 +72,7 @@ def cate_grounding(output_list: list,
 
 			cur = 0
 			for b, o in bp:
-				new_relation_list = [(o[i][2], cate_list[idx], o[i][0])
+				new_relation_list = [(o[i][0], cate_list[idx], o[i][2])
 									 for i, idx_list in enumerate(selected_cate_idx[cur:b]) for idx in idx_list]
 				res.append(new_relation_list)
 				cur = b
@@ -86,7 +86,7 @@ def cate_grounding(output_list: list,
 
 		cur = 0
 		for b, o in bp:
-			new_relation_list = [(o[i][2], cate_list[idx], o[i][0])
+			new_relation_list = [(o[i][0], cate_list[idx], o[i][2])
 								 for i, idx_list in enumerate(selected_cate_idx[cur:b]) for idx in idx_list]
 			res.append(new_relation_list)
 			cur = b
