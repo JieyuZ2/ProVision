@@ -21,7 +21,7 @@ def rel_parsing(
 		for output in outputs_list:
 			try:
 				region_numbers = re.findall(r'region(\d+)', output)
-				source_idx = int(region_numbers[0])
+				source_idx = int(region_numbers[0])-1
 				target_idx = list(map(int, region_numbers[1:]))
 				relations = re.sub(r'region(\d+)', '', output).strip().split(':')[-1].strip().split(',')
 
