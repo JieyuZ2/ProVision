@@ -1,9 +1,9 @@
 # Augmented Scene Graph Generation
 
-This notebook includes the instructions for user to generate a augmented scene graph from an aibitary image. Our pipeline is as follows:
+This notebook includes the instructions for user to generate an augmented scene graph from an arbitrary image. Our pipeline is as follows:
 ![Scene Graph Generation pipeline](figs/scene_graph_pipeline.png)
 
-**[IMPORTANT] make sure your python environment is 3.10 and `transformers` is ready in your environment.**
+**[IMPORTANT] Make sure your python environment is 3.10 and `transformers` is ready in your environment.**
 
 ## Object detection
 We use [RAM](https://github.com/xinyu1205/recognize-anything/tree/main) for image tagging and [YOLO-World](https://github.com/AILab-CVC/YOLO-World/tree/master) for open vocabulary object detection.
@@ -77,7 +77,7 @@ pip install 'git+https://github.com/facebookresearch/segment-anything-2.git'
 ```
 
 ### Usage
-Image segmentation require object detection resutls since we need to align these two annotations.
+Image segmentation requires object detection results since we need to align these two annotations.
 
 ```python
 import json
@@ -138,9 +138,9 @@ from provision.annotator import Annotator
 
 # image_list = [list of image_path]
 annotator = Annotator(device="cuda:0", image_list=image_list)
-res = annotator.image_segmentation(
-    model: str = "depth-anything/Depth-Anything-V2-Small-hf",
-    save_path: str = "./depth_pred_res/"
+res = annotator.depth_estimation(
+    model: str = "depth-anything/Depth-Anything-V2-Large-hf",
+    save_path=f"{save_dir}/depth_masks/"
 )
 json.dump(res, open(f"{save_dir}/depth-estimation-annotations.json", "w"), indent=4)
 ```
@@ -215,11 +215,11 @@ We use [Osprey](https://github.com/CircleRadon/Osprey) for relation detection. Y
 
 We have two options for relation detections: `holistic` and `detailed`.
 - holistic: model will perform one-time inference and output all possible relations. Fast but may lose some accuracy.
-- detailed: model will inference througth all possible object pairs in the image. It takes longer time to complete but each object will have at at least one relation with other objects.
+- detailed: model will infer through all possible object pairs in the image. It takes a longer time to complete, but each object will have at least one relation with other objects.
 
-We provide two types of APIs for relation detection. You can read the previous image segmentation results and call `annotator.relation_detection`, or perform image segmentation and relation detection simuteniously on the fly by calling `annotator.relation_wo_segment`.
+We provide two types of APIs for relation detection. You can read the previous image segmentation results and call `annotator.relation_detection`, or perform image segmentation and relation detection simultaneously on the fly by calling `annotator.relation_wo_segment`.
 
-You can choose either using the original output from model or ground the model's output into your predefined relation list.
+You can choose to either use the original output from a model or ground the model's output into your predefined relation list.
 
 ### Requirements
 1. Follow the [instruction](https://github.com/CircleRadon/Osprey?tab=readme-ov-file#install-%EF%B8%8F) and install the necessary packages.
@@ -227,7 +227,7 @@ You can choose either using the original output from model or ground the model's
     ```bash
     pip install -U sentence-transformers
     ```
-3. Download our osprey and clip model by this [link](https://huggingface.co/datasets/jieyuz2/relation-model/resolve/main/relation_model.zip), uncompress to a specific path.
+3. Download our osprey and clip model by this [link](https://huggingface.co/datasets/jieyuz2/relation-model/resolve/main/relation_model.zip), uncompress to your specified path.
 This will include the osprey model weight and the CLIP weight called `open_clip_pytorch_model.bin`.
 
 ### Usage of relation detection with predefined segmentation
@@ -255,7 +255,7 @@ grounded_res = annotator.relation_parsing(
 json.dump(grounded_res, open(f"{save_dir}/relation-annotations-parsed.json", 'w'), indent=4)
 ```
 
-### Usage of relation detection with on the fly segmentation
+### Usage of relation detection with on-the-fly segmentation
 ```python
 import json
 from provision.annotator import Annotator
@@ -299,7 +299,7 @@ Return format (for parsed relation):
 ```
 
 ## Scene Graph Annotation
-You can use `JointDataset` to automatically combines all annotations above as a scene graph.
+You can use `JointDataset` to automatically combine all annotations above as a scene graph.
 
 ### Usage
 ```python
